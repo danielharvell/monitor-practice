@@ -1,0 +1,101 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Visual Cron Monitor";
+    Layout = "..\\Shared\\_Layout.cshtml";
+}
+
+<div class="container">
+    <table class="table table-hover" style="font-size: 11px;">
+        <thead>
+            <tr>
+                <th class="text-center">TaskId</th>
+                <th class="text-center">Server</th>
+                <th class="text-center">Group</th>
+                <th class="text-center">JobName</th>
+                <th class="text-center">TaskName</th>
+                <th class="text-center">Success History</th>
+                <th class="text-center">Success Average</th>
+                <th class="text-center">Execution Time History</th>
+                <th class="text-center">Execution Time Average Seconds</th>
+                <th class="text-center">Subjective Concern History</th>
+                <th class="text-center">Current Subjective Concern Level</th>
+                <th class="text-center">RunTime Frequency Minutes</th>
+                <th class="text-center">Current Run Time</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: sortedTasks">
+            <tr>
+                <td data-bind="text: TaskId" class="text-center" @*style="width: 75px;"*@></td>
+                <td data-bind="text: Server" class="text-center" @*style="width: 75px;"*@></td>
+                <td data-bind="text: Group" class="text-center" @*style="width: 150px;"*@></td>
+                <td data-bind="text: JobName" class="text-center" @*style="width: 450px;"*@></td>
+                <td data-bind="text: Name, click: $root.taskClicked" class="text-center" @*style="width: 450px;"*@></td>
+                <td data-bind="attr: { values: SuccessHistory }" class="bar"></td>
+                <td data-bind="text: SuccessAverage" class="text-center" style="width: 75px;"></td>
+                <td data-bind="attr: { values: ExecutionTimeHistory }" class="line"></td>
+                <td data-bind="text: ExecutionTimeAverageSeconds" class="text-center" style="width: 75px;"></td>
+                <td data-bind="attr: { values: SubjectiveConcernHistory }" class="line"></td>
+                <td data-bind="text: CurrentSubjectiveConcernLevel, click: $root.concernLevelClicked" class="text-center concern" style="width: 75px;"></td>
+                <td data-bind="text: RunTimeFrequencyMinutes" class="text-center" style="width: 75px;"></td>
+                <td data-bind="text: CurrentRunTime" class="text-center" style="width: 175px; font-size: 11px;"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="concern-modal" class="modal fade" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Task Output</h3>
+            </div>
+
+            <div class="modal-body">
+                <ul id="concern-tab" class="nav nav-tabs" role="tablist">
+                </ul>
+
+                <div id="concern-content" class="tab-content">
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="task-modal" class="modal fade" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal">×</a>
+                <h3>Task Execution Info</h3>
+            </div>
+
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li id="command-line"></li>
+                    <li id="arguments"></li>
+                    <li id="working-directory"></li>
+                </ul>
+
+                <div  class="tab-content">
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+    </div>
+</div>

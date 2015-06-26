@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon"/>
+    <script src="@Url.Content("~/Scripts/lib/require.js")" data-main="@Url.Content("~/Scripts/main.js")"></script>
+@*    <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>*@
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Visual Cron Monitor", "Index", "Monitor", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li><i id="pause" class="glyphicon glyphicon-pause" style="font-size: 20px; padding-right: 100px; padding-top: 12px; color: #999999"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="text-center">&copy; @DateTime.Now.Year - Metasource</p>
+        </footer>
+    </div>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

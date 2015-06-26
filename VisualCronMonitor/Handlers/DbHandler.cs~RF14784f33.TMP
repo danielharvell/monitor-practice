@@ -1,0 +1,18 @@
+﻿using VisualCronMonitor.Models;
+
+namespace VisualCronMonitor.Handlers
+{
+    public class DbHandler
+    {
+        public void UpdateTask(string message)
+        {
+            var task = new Task { Message = message };
+
+            using (var monitorContext = new MonitorContext())
+            {
+                monitorContext.Tasks.Add(task);
+                monitorContext.SaveChanges();
+            } 
+        }
+    }
+}

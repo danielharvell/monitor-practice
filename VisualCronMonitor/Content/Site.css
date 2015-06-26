@@ -1,0 +1,69 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 2070px;
+        /*max-width: 1170px;*/
+    }
+}
+
+.zero { background-color: #67E667 !important; }
+.one {background-color: red !important; opacity: 0.5 !important;}
+.two {background-color: red !important; opacity: 0.5 !important;}
+.three {background-color: red !important; opacity: 0.55 !important;}
+.four {background: linear-gradient(135deg, red, red 60%, blue);}
+.five {background-color: red !important; opacity: 0.65 !important;}
+.six {background-color: red !important; opacity: 0.7 !important;}
+.seven {background-color: red !important; opacity: 0.75 !important;}
+.eight {background-color: red !important; opacity: 0.8 !important;}
+.nine {background-color: red !important; opacity: 0.85 !important;}
+.ten {background-color: red !important; opacity: 0.9 !important;}
+
+
+/*.nav-tabs {
+    margin: 0;
+    padding: 0;
+    border: 0;    
+}
+.nav-tabs > li > a {
+    background: #DADADA;
+    border-radius: 0;
+    box-shadow: inset 0 -8px 7px -9px rgba(0,0,0,.4),-2px -2px 5px -2px rgba(0,0,0,.4);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover {
+    background: #F5F5F5;
+    box-shadow: inset 0 0 0 0 rgba(0,0,0,.4),-2px -3px 5px -2px rgba(0,0,0,.4);
+}
+
+.tab-pane {
+    background: #F5F5F5;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    border-radius: 0;
+    text-align: center;
+    padding: 10px;
+}*/

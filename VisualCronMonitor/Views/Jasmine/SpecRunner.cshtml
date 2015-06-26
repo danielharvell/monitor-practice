@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Jasmine SpecRunner";
+    Layout = null;
+}
+
+<h2>SpecRunner</h2>
+
+<link rel="stylesheet" href="@Url.Content("~/Scripts/lib/jasmine-2.3.0/jasmine.css")">
+><script src="@Url.Content("~/Scripts/lib/jasmine-2.3.0/jasmine.js")"></script>
+<script src="@Url.Content("~/Scripts/lib/jasmine-2.3.0/jasmine-html.js")"></script>
+<script src="@Url.Content("~/Scripts/lib/jasmine-2.3.0/boot.js")"></script>
+
+<!-- include source files here... -->
+<script src="@Url.Content("~/Scripts/src/Player.js")"></script>
+<script src="@Url.Content("~/Scripts/src/Song.js")"></script>
+
+<!-- include spec files here... -->
+<script src="@Url.Content("~/Scripts/spec/SpecHelper.js")"></script>
+<script src="@Url.Content("~/Scripts/spec/PlayerSpec.js")"></script>

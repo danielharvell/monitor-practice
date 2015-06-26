@@ -1,0 +1,28 @@
+﻿<script id="concern-tab-tpl" type="text/html">
+        {{#active}} {{! This is our IF }}
+        <li style="font-size: 0.7em" class="active">
+        {{/active}}
+
+        {{^active}} {{! This is our ELSE }}
+        <li style="font-size: 0.7em">
+        {{/active}}
+
+        <a href="#{{count}}" role="tab" data-toggle="tab">
+            <i class="glyphicon glyphicon-time"></i> {{count}}
+        </a>
+    </li>
+</script>
+
+<script id="concern-content-tpl" type="text/html">
+    {{#active}} {{! This is our IF }}
+    <div style="font-size: 0.7em" class="tab-pane fade active in" id="{{count}}">
+        <p>{{output}}</p>
+    </div>
+    {{/active}}
+
+    {{^active}} {{! This is our ELSE }}
+    <div style="font-size: 0.7em" class="tab-pane fade in" id="{{count}}">
+        <p>{{output}}</p>
+    </div>
+    {{/active}}
+</script>
